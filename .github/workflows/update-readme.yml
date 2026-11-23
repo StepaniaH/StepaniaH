@@ -1,0 +1,43 @@
+name: Update Emacs Profile README
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "profile.toml"
+      - "scripts/generate.py"
+  schedule:
+    - cron: "0 18 * * *" # 每天北京时间凌晨 2:00 自动刷新 GitHub 统计数据
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate Emacs SVGs and README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+        run: python3 scripts/generate.py --fetch-github
+
+      - name: Commit updated files if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/emacs-frame-light.svg assets/emacs-frame-dark.svg README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update Emacs profile README"
+            git push
+          fi

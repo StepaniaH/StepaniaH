@@ -1,0 +1,87 @@
+# ============================================================================
+# GitHub 主页配置文件（日常只需要修改这个文件！）
+#
+# 修改后有两种更新方式：
+# 1. 本地预览：运行 `python3 scripts/generate.py` 即可重新生成 SVG 和 README.md
+# 2. 直接推送到 GitHub：GitHub Actions 会自动拉取最新统计数据并重新生成全部文件
+# ============================================================================
+
+[profile]
+github_user = "StepaniaH"
+title = "StepaniaH"
+subtitle = "Law → Finance → Code · Building small, useful tools."
+website = "https://stepaniah.me"
+blog = "https://blog.stepaniah.me"
+email = "StepaniaH0907@gmail.com"
+
+# ----------------------------------------------------------------------------
+# iOS App 项目（复制一段 [[ios_apps]] 即可新增项目）
+# ----------------------------------------------------------------------------
+[[ios_apps]]
+name = "NodeFinch"
+desc = "VPS monitor & renewal tracker"
+tag = "Swift"
+url = "https://nodefinch.com/"
+
+[[ios_apps]]
+name = "CodaWren"
+desc = "Music player for Subsonic servers"
+tag = "Swift"
+url = "https://codawren.com/"
+
+# ----------------------------------------------------------------------------
+# 开源项目（复制一段 [[open_source]] 即可新增项目）
+# ----------------------------------------------------------------------------
+[[open_source]]
+name = "Port-Light"
+desc = "Traffic-light monitor for local ports"
+tag = "macOS"
+url = "https://github.com/StepaniaH/port-light"
+
+[[open_source]]
+name = "Navidrome Stat"
+desc = "Stats dashboard for Subsonic clients"
+tag = "Web"
+url = "https://github.com/StepaniaH/navidrome-stat"
+
+[[open_source]]
+name = "Pic Shelf"
+desc = "Lightweight personal image library"
+tag = "Self-hosted"
+url = "https://github.com/StepaniaH/pic-shelf"
+
+[[open_source]]
+name = "Toolbox"
+desc = "Small, privacy-friendly web tools"
+tag = "Utilities"
+url = "https://github.com/StepaniaH/Toolbox"
+
+# ----------------------------------------------------------------------------
+# GitHub 统计默认/回退数据（在 GitHub Actions 中加 --fetch-github 会自动拉取真实数据覆盖）
+# ----------------------------------------------------------------------------
+[stats]
+commits = "420"
+repos = "18"
+stars = "64"
+prs = "32"
+contributed = "12"
+
+[[languages]]
+name = "Python"
+percent = 44.2
+
+[[languages]]
+name = "Swift"
+percent = 28.6
+
+[[languages]]
+name = "TypeScript"
+percent = 15.4
+
+[[languages]]
+name = "HTML / CSS"
+percent = 7.8
+
+[[languages]]
+name = "Shell"
+percent = 4.0
